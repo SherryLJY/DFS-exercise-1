@@ -1,0 +1,40 @@
+<div class="hello">HELLO WORLD</div>
+
+<div class="circle"></div>
+
+<style>
+    .hello {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        font-size: 80px;
+        font-family: Helvetica;
+        display: inline;
+        text-align: center;
+        transform: translate(-50%, -50%);
+    }
+
+
+    .circle {
+        position: fixed;
+        height: 150px;
+        width: 150px;
+        top: 0;
+        bottom: 0;
+        background-color: #FF5852;
+        border-radius: 50%;
+        mix-blend-mode: luminosity;
+        backdrop-filter: blur(3px);
+    }
+</style>
+
+<script>
+    var ball = document.querySelector(".circle");
+    window.addEventListener("mousemove", (event) => {
+        var y = event.clientY;
+        var x = event.clientX;
+        console.log(x + ":" + y);
+        ball.style.top = y + "px";
+        ball.style.left = x + "px";
+    });
+</script>
